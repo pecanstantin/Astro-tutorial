@@ -1,29 +1,57 @@
 ---
-import '../styles/global.css';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import Header from '../components/Header.astro';
+const pageTitle = "About Me";
 
-import Footer from '../components/Footer.astro';
+const identity = {
+  firstName: "K",
+  country: "U.S.",
+  occupation: "lalalala",
+  hobbies: ["books", "birdwatching", "baseball"],
+};
 
-const pageTitle = "Home Page";
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = true;
+const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-    <Header />
-		  <h1>{pageTitle}</h1>
-    <Footer />
-    <script>
-      document.querySelector('.hamburger').addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.toggle('expanded');
-      });
-    </script>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <style is:global define:vars={{ skillColor, fontWeight, textCase }}>
+    /* body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 1rem;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 1rem;
+    }
+    .skill {
+      color: var(--skillColor);
+      font-weight: var(--fontWeight);
+      text-transform: var(--textCase);
+    } */
+  </style>
+  <p>
+    My name is {identity.firstName}. I live in {identity.country} and I work as a
+    {identity.occupation}.
+  </p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+</BaseLayout>

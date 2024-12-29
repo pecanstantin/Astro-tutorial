@@ -1,4 +1,30 @@
-html {
+/* body { 
+	  line-height: 1.4;
+	    font-size: 16px;
+	    padding: 0 10px;
+	    margin: 50px auto;
+	    max-width: 650px;
+	}
+
+	#maincontent
+	{
+	max-width:42em;margin:15 auto;
+	}
+   */
+
+body {
+  line-height: 1.4;
+  font-size: 16px;
+  padding: 0 10px;
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+/* html {
   background-color: #f1f5f9;
   font-family: sans-serif;
 }
@@ -20,7 +46,6 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* nav styles */
 .hamburger {
   padding-right: 20px;
   cursor: pointer;
@@ -58,7 +83,7 @@ h1 {
 }
 
 .expanded {
-  display: unset;
+  display: block;
 }
 
 @media screen and (min-width: 636px) {
@@ -78,4 +103,4 @@ h1 {
   .hamburger {
     display: none;
   }
-}
+} */
